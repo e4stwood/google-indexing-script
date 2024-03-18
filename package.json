@@ -1,9 +1,30 @@
 {
   "name": "google-indexing-script",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.4",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "google-indexing-script": "./dist/bin.js",
+    "gis": "./dist/bin.js"
+  },
+  "keywords": [
+    "google",
+    "indexing",
+    "search-console",
+    "sitemap",
+    "seo",
+    "google-search",
+    "cli",
+    "typescript"
+  ],
+  "license": "MIT",
   "scripts": {
-    "index": "node ./src/index.mjs"
+    "index": "ts-node ./src/cli.ts",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish"
   },
   "dependencies": {
     "googleapis": "131.0.0",
@@ -11,5 +32,12 @@
   },
   "prettier": {
     "printWidth": 120
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.1",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
   }
 }
