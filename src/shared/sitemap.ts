@@ -59,5 +59,5 @@ export async function getSitemapPages(accessToken: string, siteUrl: string) {
     pages = [...pages, ...sites];
   }
 
-  return [sitemaps, [...new Set(pages)]];
+  return [sitemaps, [...new Set(pages.reverse())]];
 }
